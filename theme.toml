@@ -1,0 +1,12 @@
+name = "twentytwenty"
+license = "GPL v2"
+licenselink = "https://github.com/imjma/hugo-theme-twentytwenty"
+description = ""
+homepage = "https://github.com/imjma/hugo-theme-twentytwenty"
+tags = ["website", "responsive", "minimalist", "clean", "simple", "blog", "mobile", "wordpress", "theme"]
+features = ["responsive", ""]
+min_version = 0.1
+
+[author]
+  name = "Jie Ma"
+  homepage = "https://github.com/imjma"

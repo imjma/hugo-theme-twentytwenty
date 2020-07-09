@@ -1,0 +1,56 @@
+######################## default configuration ####################
+baseURL = "https://jma.im"
+languageCode = "en-us"
+languageName = "en"
+theme = "twentytwenty"
+title = "jma.im"
+# post pagination
+paginate = "10"
+# post excerpt
+summaryLength = "250"
+# google analytics
+googleAnalytics = "" # example : UA-123-45
+
+[author]
+name = "Jie Ma"
+url = "https://jma.dev"
+
+############################## Output ###############################
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+# unsafe html
+[markup.goldmark.renderer]
+unsafe = true
+
+[taxonomies]
+author = "author"
+category = "categories"
+tag = "tags"
+
+############################## navigation ###############################
+
+[[menu.main]]
+url = "/"
+name = "Posts"
+weight = 1
+
+[[menu.main]]
+url = "/about"
+name = "About"
+weight = 2
+
+#################### default parameters ################################
+[params]
+# Meta data
+author = "Jie Ma"
+description = "Jie Ma; Software Engineer; Photographer;"
+images = ["site-feature-image.jpg"]
+
+############################# social site ########################
+[params.social]
+email = "#"
+github = "imjma"
+instagram = "#"
+linkedin = "#"
+twitter = "#"

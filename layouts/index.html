@@ -1,0 +1,11 @@
+{{ define "main" }}
+{{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") }}
+{{ range $paginator.Pages }}
+
+{{ .Render "post" }}
+
+<hr class="post-separator styled-separator is-style-wide" aria-hidden="true" />
+{{ end }}
+{{ partial "pagination.html" . }}
+</main>
+{{ end }}

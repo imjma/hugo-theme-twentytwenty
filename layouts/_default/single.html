@@ -1,0 +1,43 @@
+{{ define "main" }}
+
+{{ .Render "post" }}
+
+{{ $related := .Site.RegularPages.Related . | first 5 }}
+{{ with $related }}
+<div class="entry-header-inner section-inner thin">
+    <hr class="styled-separator is-style-wide" aria-hidden="true" />
+    <p class="has-text-align-center">Possibly Related Posts</p>
+    <ul>
+        {{ range . }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+    </ul>
+</div>
+{{ end }}
+
+<nav class="pagination-single section-inner" aria-label="Post" role="navigation">
+
+    <hr class="styled-separator is-style-wide" aria-hidden="true" />
+
+    <div class="pagination-single-inner">
+
+        {{ with .PrevInSection }}
+        <a class="previous-post" href="{{ .Permalink }}">
+            <span class="arrow" aria-hidden="true">&larr;</span>
+            <span class="title"><span class="title-inner">{{ .Title }}</span></span>
+        </a>
+        {{ end }}
+        {{ with .NextInSection }}
+        <a class="next-post" href="{{ .Permalink }}">
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+            <span class="title"><span class="title-inner">{{ .Title }}</span></span>
+        </a>
+        {{ end }}
+
+    </div><!-- .pagination-single-inner -->
+
+    <hr class="styled-separator is-style-wide" aria-hidden="true" />
+
+</nav><!-- .pagination-single -->
+
+{{ end }}

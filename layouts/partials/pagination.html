@@ -1,0 +1,45 @@
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 -}}
+<div class="pagination-wrapper section-inner">
+    <nav class="navigation pagination" role="navigation" aria-label="Posts">
+        <h2 class="screen-reader-text">Posts navigation</h2>
+        <div class="nav-links">
+            {{- if $pag.HasPrev -}}
+            <a class="prev page-numbers" href="{{ $pag.Prev.URL }}"><span aria-hidden="true">&larr;</span>
+                <span class="nav-prev-text">Newer <span class="nav-short">Posts</span></span></a>
+            {{- else  }}
+            <span class="prev page-numbers placeholder" aria-hidden="true"><span aria-hidden="true">&larr;</span>
+                <span class="nav-prev-text">Newer <span class="nav-short">Posts</span></span></span>
+            {{- end -}}
+
+            {{- $ellipsed := false -}}
+            {{- $shouldEllipse := false -}}
+            {{- range $pag.Pagers -}}
+                {{- $right := sub .TotalPages .PageNumber -}}
+                {{- $showNumber := or (le .PageNumber 3) (eq $right 0) -}}
+                {{- $showNumber := or $showNumber (and (gt .PageNumber (sub $pag.PageNumber 2)) (lt .PageNumber (add $pag.PageNumber 2))) -}}
+                {{- if $showNumber -}}
+                    {{- $ellipsed = false -}}
+                    {{- $shouldEllipse = false -}}
+                {{- else -}}
+                    {{- $shouldEllipse = not $ellipsed -}}
+                    {{- $ellipsed = true -}}
+                {{- end -}}
+                {{- if eq . $pag }}
+            <span aria-current="page" class="page-numbers current">{{ .PageNumber }}</span>
+                {{- else if $showNumber }}
+            <a class="page-numbers" href="{{ .URL }}">{{ .PageNumber }}</a>
+                {{- else if $shouldEllipse }}
+            <span class="page-numbers dots">&hellip;</span>
+                {{- end -}}
+            {{- end -}}
+
+            {{ if $pag.HasNext -}}
+            <a class="next page-numbers" href="{{ $pag.Next.URL }}"><span class="nav-next-text">Older <span
+                        class="nav-short">Posts</span></span>
+                <span aria-hidden="true">&rarr;</span></a>
+            {{- end -}}
+        </div>
+    </nav>
+</div>
+{{ end }}
