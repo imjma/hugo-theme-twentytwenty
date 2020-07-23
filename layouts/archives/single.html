@@ -1,0 +1,24 @@
+{{ define "main" }}
+<article>
+<header class="entry-header has-text-align-center">
+  <div class="entry-header-inner section-inner medium">
+    <h2 class="entry-title heading-size-1">{{ .Title }}</h2>
+  </div><!-- .entry-header-inner -->
+</header><!-- .entry-header -->
+
+<div class="post-inner">
+  <div class="entry-content">
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ range $posts }}
+
+    <div class="section-inner">
+      <p><span class="post-meta">{{.Date.Format "Jan 2, 2006"}}</span> <span class="entry-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span></p>
+    </div><!-- .section-inner -->
+
+
+{{ end }}
+
+</div>
+</div>
+</article>
+{{ end }}

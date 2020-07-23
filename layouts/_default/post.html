@@ -2,11 +2,10 @@
   <header class="entry-header has-text-align-center">
     <div class="entry-header-inner section-inner medium">
       <h2 class="entry-title heading-size-1"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-      {{ if .Date }}
+
       <div class="post-meta-wrapper post-meta-single post-meta-single-top">
 
         <ul class="post-meta">
-
 
           <li class="post-date meta-wrapper">
             <span class="meta-icon">
@@ -24,7 +23,7 @@
         </ul><!-- .post-meta -->
 
       </div><!-- .post-meta-wrapper -->
-      {{ end }}
+
     </div><!-- .entry-header-inner -->
   </header><!-- .entry-header -->
 
@@ -67,3 +66,5 @@
   {{ end }}
 
 </article><!-- .post -->
+
+<hr class="post-separator styled-separator is-style-wide" aria-hidden="true" />

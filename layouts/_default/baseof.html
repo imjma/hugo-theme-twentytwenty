@@ -3,7 +3,7 @@
 <html class="no-js" lang="en-US">
   {{ partial "head.html" . }}
   <body
-    class="home blog wp-embed-responsive enable-search-modal has-no-pagination showing-comments show-avatars footer-top-hidden"
+    class="home blog wp-embed-responsive enable-search-modal has-no-pagination showing-comments show-avatars footer-top-hidden{{ if $.IsPage }} singular{{ end }}"
   >
   {{ partial "header.html" . }}
     <main id="site-content" role="main">

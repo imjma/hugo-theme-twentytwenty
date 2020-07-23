@@ -33,13 +33,13 @@ tag = "tags"
 ############################## navigation ###############################
 
 [[menu.main]]
-url = "/"
-name = "Posts"
+url = "archives"
+name = "archives"
 weight = 1
 
 [[menu.main]]
 url = "/about"
-name = "About"
+name = "about"
 weight = 2
 
 #################### default parameters ################################

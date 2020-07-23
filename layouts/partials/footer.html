@@ -1,10 +1,10 @@
 <footer id="site-footer" role="contentinfo" class="header-footer-group">
 
     <div class="section-inner">
-
         <div class="footer-credits">
 
-                <p>{{ $.Site.Title }} is written by <a href="{{ $.Site.Author.url }}">{{ $.Site.Author.name }}</a></p>
+            <p class="footer-copyright">Made with <span style="color: #e25555;">&hearts;</span> by <a href="https://jma.dev"
+                    target="_blank">Jie Ma</a> for <a href="https://jma.im" target="_blank">jma.im</a></p>
 
         </div><!-- .footer-credits -->
 
@@ -23,5 +23,3 @@
 
 {{ $js := resources.Get "js/index.js" | resources.Minify }}
 <script src='{{ $js.Permalink }}' id='twentytwenty-js-js' async></script>
-
-

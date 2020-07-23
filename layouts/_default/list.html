@@ -1,11 +1,9 @@
 {{ define "main" }}
-{{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") }}
-{{ range $paginator.Pages }}
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ range $posts }}
 
-{{ .Render "post" }}
+{{ .Render "summary" }}
 
-<hr class="post-separator styled-separator is-style-wide" aria-hidden="true" />
 {{ end }}
-{{ partial "pagination.html" . }}
-</main>}
+
 {{ end }}
